@@ -1,0 +1,51 @@
+
+/*
+DOCS:
+https://firebase.google.com/docs/flutter/setup?platform=android
+https://firebase.google.com/docs/cli
+
+PACKAGES:
+https://pub.dev/packages/google_sign_in   OR facebook_signin for FACEBOOK
+https://pub.dev/packages/firebase_core/
+https://pub.dev/packages/firebase_auth/
+https://pub.dev/packages/cloud_firestore
+https://pub.dev/packages/firebase_storage
+
+SHA FINGERPRINT
+PS C:\Flutter_Apps\zedmusic\android> ./gradlew signingReport
+
+-Add this line rule
+service firebase.storage {
+  match /b/{bucket}/o {
+    match /{allPaths=**} {
+      allow read, write: if request.auth != null;
+    }
+  }
+}
+
+
+
+
+RUN "flutterfire configure" TO OBTAIN firebase_options
+
+
+Add these lines to make your splash screen more good
+in values/styles.xml and values-night/styles.xml in res folder:
+ <item name="android:statusBarColor">@android:color/transparent</item>
+ <item name="android:windowTranslucentNavigation">true</item>
+
+
+ Change App name
+ IOS
+ Open info.plist (located at ios/Runner)
+ <key>CFBundleName</key>
+ <string>App Name</string>
+
+
+ ANDROID
+ Open AndroidManifest.xml (located at android/app/src/main)
+
+ <application
+       android:label="App Name" ...> // Your app name here
+
+ */
